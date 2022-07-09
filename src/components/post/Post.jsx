@@ -1,6 +1,7 @@
 import "./post.css";
+import { Link } from "react-router-dom";
 
-export default function Post() {
+export default function Post({ postId }) {
 	return (
 		<div className="post">
 			<img
@@ -13,7 +14,11 @@ export default function Post() {
 					<span className="postCat">Life</span>
 					<span className="postCat">Music</span>
 				</div>
-				<span className="postTitle">Lorem ipsum dolor sit amet</span>
+				<Link to={"/post/" + postId} className="links">
+					<span className="postTitle">
+						{"Lorem ipsum dolor sit amet " + postId}
+					</span>
+				</Link>
 				<hr />
 				<span className="postDate">1 hour ago</span>
 			</div>
@@ -21,19 +26,16 @@ export default function Post() {
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
 				distinctio sint molestiae vero, numquam quod quos voluptate ea saepe
 				nisi cupiditate. Iusto adipisci pariatur ex! Impedit inventore
-				voluptatibus sed maxime!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-				distinctio sint molestiae vero, numquam quod quos voluptate ea saepe
-				nisi cupiditate. Iusto adipisci pariatur ex! Impedit inventore
-				voluptatibus sed maxime!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-				distinctio sint molestiae vero, numquam quod quos voluptate ea saepe
-				nisi cupiditate. Iusto adipisci pariatur ex! Impedit inventore
-				voluptatibus sed maxime!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-				distinctio sint molestiae vero, numquam quod quos voluptate ea saepe
-				nisi cupiditate. Iusto adipisci pariatur ex! Impedit inventore
-				voluptatibus sed maxime!
+				voluptatibus sed maxime! Lorem ipsum dolor sit amet consectetur
+				adipisicing elit. Facere distinctio sint molestiae vero, numquam quod
+				quos voluptate ea saepe nisi cupiditate. Iusto adipisci pariatur ex!
+				Impedit inventore voluptatibus sed maxime! Lorem ipsum dolor sit amet
+				consectetur adipisicing elit. Facere distinctio sint molestiae vero,
+				numquam quod quos voluptate ea saepe nisi cupiditate. Iusto adipisci
+				pariatur ex! Impedit inventore voluptatibus sed maxime! Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Facere distinctio sint
+				molestiae vero, numquam quod quos voluptate ea saepe nisi cupiditate.
+				Iusto adipisci pariatur ex! Impedit inventore voluptatibus sed maxime!
 			</p>
 		</div>
 	);

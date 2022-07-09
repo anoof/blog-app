@@ -1,6 +1,8 @@
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
+	const user = false;
 	return (
 		<div className="nav">
 			<div className="navLeft">
@@ -11,20 +13,55 @@ export default function NavBar() {
 			</div>
 			<div className="navCenter">
 				<ul className="navList">
-					<li className="navListItem">HOME</li>
-					<li className="navListItem">ABOUT</li>
-					<li className="navListItem">CONTACT</li>
-					<li className="navListItem">WRITE</li>
-					<li className="navListItem">LOGOUT</li>
+					<li className="navListItem">
+						<Link to="/" className="links">
+							HOME
+						</Link>
+					</li>
+					<li className="navListItem">
+						<Link to="/about" className="links">
+							ABOUT
+						</Link>
+					</li>
+					<li className="navListItem">
+						<Link to="/" className="links">
+							CONTACT
+						</Link>
+					</li>
+					<li className="navListItem">
+						<Link to="/create" className="links">
+							WRITE
+						</Link>
+					</li>
+					<li className="navListItem">
+						<Link to="/" className="links">
+							LOGOUT
+						</Link>
+					</li>
 				</ul>
 			</div>
 			<div className="navRight">
-				<img
-                    className="navImg"
-					src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-					alt="search"
-				/>
-                <i className="navSearchIcon fas fa-search"></i>
+				{user ? (
+					<img
+						className="navImg"
+						src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+						alt="search"
+					/>
+				) : (
+					<ul className="navList">
+						<li className="navListItem">
+							<Link to="/login" className="links">
+								LOGIN
+							</Link>
+						</li>
+						<li className="navListItem">
+							<Link to="/register" className="links">
+								REGISTER
+							</Link>
+						</li>
+					</ul>
+				)}
+				<i className="navSearchIcon fas fa-search"></i>
 			</div>
 		</div>
 	);
