@@ -5,6 +5,8 @@
 .postViewWrapper {
     padding: 20px;
     padding-right: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .postViewImg {
@@ -19,6 +21,20 @@
     margin: 10px;
     font-family: 'Lora', serif;
     font-size: 28px;
+}
+
+.postViewTitleInput {
+    text-align: center;
+    margin: 10px;
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    border: none;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+}
+
+.postViewTitleInput:focus {
+    outline: none;
 }
 
 .postViewEdit {
@@ -58,4 +74,27 @@
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
+}
+
+.postViewDescInput {
+    border: none;
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.postViewDescInput:focus {
+    outline: none;
+}
+
+.postViewButton {
+    width: 100px;
+    border: none;
+    background-color: teal;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
 }

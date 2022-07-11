@@ -10,8 +10,9 @@ export default function Register() {
 	const [error, setError] = useState(false);
 
 	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setError(false);
 		try {
-			e.preventDefault();
 			const res = await axios.post("/auth/register", {
 				username,
 				email,
@@ -57,6 +58,7 @@ export default function Register() {
 					Login
 				</Link>
 			</button>
+			{error && <span style={{color: "red", marginTop: "10px"}}>Something went wrong!</span>}
 		</div>
 	);
 }
