@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import "./postview.css";
-import axios from "axios";
+import { axiosInstance } from "../../config";
 import { Context } from "../../context/Context";
 
 export default function PostView() {
@@ -16,7 +16,7 @@ export default function PostView() {
 
 	useEffect(() => {
 		const getPost = async () => {
-			const res = await axios.get("/posts/" + path);
+			const res = await axiosInstance.get("/posts/" + path);
 			setPost(res.data);
 			setTitle(res.data.title);
 			setDesc(res.data.desc);
@@ -26,7 +26,7 @@ export default function PostView() {
 
 	const handleDelete = async () => {
 		try {
-			await axios.delete("/posts/" + path, {
+			await axiosInstance.delete("/posts/" + path, {
 				data: { username: user.username },
 			});
 			window.location.replace("/");
@@ -35,7 +35,7 @@ export default function PostView() {
 
 	const handleUpdate = async () => {
 		try {
-			await axios.put("/posts/" + path, {
+			await axiosInstance.put("/posts/" + path, {
 				username: user.username,
 				title,
 				desc,
