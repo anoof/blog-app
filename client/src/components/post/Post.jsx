@@ -2,7 +2,7 @@ import "./post.css";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-	const picsUrl = "http://localhost:5000/images/";
+	const picsUrl = "https://greenlight-blog.herokuapp.com/images/";
 	return (
 		<div className="post">
 			{post.photo ? (

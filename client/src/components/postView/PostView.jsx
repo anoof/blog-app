@@ -8,7 +8,7 @@ export default function PostView() {
 	const location = useLocation();
 	const path = location.pathname.split("/")[2];
 	const [post, setPost] = useState({});
-	const picsUrl = "http://localhost:5000/images/";
+	const picsUrl = "https://greenlight-blog.herokuapp.com/images/";
 	const { user } = useContext(Context);
 	const [title, setTitle] = useState("");
 	const [desc, setDesc] = useState("");
