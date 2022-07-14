@@ -47,8 +47,14 @@ export default function PostView() {
 	return (
 		<div className="postView">
 			<div className="postViewWrapper">
-				{post.photo && (
+				{post.photo ? (
 					<img className="postViewImg" src={picsUrl + post.photo} alt="" />
+				) : (
+					<img
+						className="postViewImg"
+						src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+						alt=""
+					/>
 				)}
 				{updateMode ? (
 					<input

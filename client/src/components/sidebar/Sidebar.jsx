@@ -2,9 +2,12 @@ import "./sidebar.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 
 export default function Sidebar() {
 	const [cats, setCats] = useState([]);
+	const { user } = useContext(Context);
 
 	useEffect(() => {
 		const getCats = async () => {
@@ -22,8 +25,7 @@ export default function Sidebar() {
 					alt="sidebar"
 				/>
 				<p>
-					Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-					amet ex esse.Sunt eu ut nostrud id quis proident.
+					This is a dev blog application for employees and associates of greenlight studio. Feel free to share these posts across your socials!
 				</p>
 			</div>
 			<div className="sidebarItem">

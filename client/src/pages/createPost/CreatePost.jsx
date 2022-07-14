@@ -33,13 +33,18 @@ export default function CreatePost() {
 	};
 	return (
 		<div className="createPost">
-			{file && (
+			{file ? (
 				<img
 					className="createImg"
 					src={URL.createObjectURL(file)}
 					alt="preview"
 				/>
-				//https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500
+			) : (
+				<img
+					className="createImg"
+					src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+					alt="preview"
+				/>
 			)}
 			<form className="createForm" onSubmit={handleSubmit}>
 				<div className="createFormGroup">

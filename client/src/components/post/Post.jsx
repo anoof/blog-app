@@ -5,8 +5,15 @@ export default function Post({ post }) {
 	const picsUrl = "http://localhost:5000/images/";
 	return (
 		<div className="post">
-			{post.photo && <img className="postImg" src={picsUrl + post.photo} alt="Post" />}
-
+			{post.photo ? (
+				<img className="postImg" src={picsUrl + post.photo} alt="Post" />
+			) : (
+				<img
+					className="postImg"
+					src="https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+					alt="Post"
+				/>
+			)}
 			<div className="postInfo">
 				<div className="postCats">
 					<span className="postCat">Life</span>

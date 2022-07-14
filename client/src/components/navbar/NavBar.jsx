@@ -47,7 +47,11 @@ export default function NavBar() {
 			<div className="navRight">
 				{user ? (
 					<Link to="/settings">
-						<img className="navImg" src={PF + user.profilePic} alt="profile" />
+						<img
+							className="navImg"
+							src={user.profilePic === "" ? "user.png" : PF + user.profilePic}
+							alt="profile"
+						/>
 					</Link>
 				) : (
 					<ul className="navList">
